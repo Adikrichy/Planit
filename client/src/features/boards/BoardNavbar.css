@@ -1,0 +1,47 @@
+.board-navbar {
+  background-color: var(--navbar-background);
+  height: var(--board-navbar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  transition: background-color 0.3s ease;
+}
+
+.board-navbar .board-info {
+  display: flex;
+  align-items: center;
+  margin-top: 8px; /* Сдвиг блока вниз */
+}
+
+.board-navbar h2 {
+  font-weight: 600;
+  color: var(--text-color); /* Цвет текста зависит от темы */
+  margin-top: 8px; /* Сдвиг заголовка вниз */
+  margin-left: 17.7px;
+}
+
+body.light-theme .board-navbar {
+  background-color: #007bff; /* Синий фон для светлой темы */
+}
+
+body.dark-theme .board-navbar {
+  background-color: var(--grey-darker); /* Темный фон для темной темы */
+}
+
+.board-navbar .favorite-btn {
+  margin-left: 0.5rem;
+  display: flex;
+  margin-bottom: 0.3rem; /* Сдвиг кнопки вниз */
+}
+
+.board-navbar .favorite-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.board-navbar .board-dropdown-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+}

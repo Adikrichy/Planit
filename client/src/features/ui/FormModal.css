@@ -1,0 +1,71 @@
+/* Общие стили для модального окна */
+.form-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: var(--bg); /* Фон зависит от темы */
+  color: var(--text-color); /* Цвет текста зависит от темы */
+  padding: 2rem 3rem;
+  border-radius: var(--border-radius);
+  height: 30%;
+  width: 40%;
+  max-width: 300px;
+  min-width: 250px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-modal h3 {
+  text-align: center;
+  margin: 0 0rem 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--text-color); /* Цвет заголовка зависит от темы */
+}
+
+.form-modal form {
+  padding: 0;
+}
+
+.form-modal form button {
+  height: 30px;
+  background-color: var(--button-bg); /* Фон кнопки зависит от темы */
+  color: var(--button-text); /* Цвет текста кнопки зависит от темы */
+  border: none;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-modal form button:hover {
+  background-color: var(--button-hover-bg); /* Фон кнопки при наведении */
+}
+
+/* Светлая тема */
+body.light-theme .form-modal {
+  background-color: #ffffff; /* Белый фон */
+  color: #000000; /* Черный текст */
+}
+
+body.light-theme .form-modal form button {
+  background-color: #007bff; /* Синий фон кнопки */
+  color: #ffffff; /* Белый текст кнопки */
+}
+
+body.light-theme .form-modal form button:hover {
+  background-color: #0056b3; /* Темно-синий фон кнопки при наведении */
+}
+
+/* Темная тема */
+body.dark-theme .form-modal {
+  background-color: #1e1e1e; /* Темный фон */
+  color: #e0e0e0; /* Светлый текст */
+}
+
+body.dark-theme .form-modal form button {
+  background-color: #28a745; /* Зеленый фон кнопки */
+  color: #ffffff; /* Белый текст кнопки */
+}
+
+body.dark-theme .form-modal form button:hover {
+  background-color: #218838; /* Темно-зеленый фон кнопки при наведении */
+}

@@ -1,0 +1,298 @@
+/********************************************
+ * Общие переменные (пример, если не определены)
+ ********************************************/
+/*
+:root {
+  --list-bg: #2f3136;
+  --list-header: #42454b;
+  --card-bg: #36393f;
+  --border-radius: 6px;
+  --accent-dark-010: rgba(0, 0, 0, 0.1);
+}
+*/
+
+/********************************************
+ * Стили для списка (List)
+ ********************************************/
+
+/* Основной контейнер списка */
+.list {
+  background-color: var(--list-bg);
+  border-radius: var(--border-radius);
+  min-width: 225px;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  height: fit-content; /* подстраивается под контент */
+}
+
+/* Заголовок списка (фоновая полоса + текст) */
+.list-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--list-header);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  cursor: grab;
+}
+
+/* Кнопка внутри заголовка (например, Delete) изначально скрыта */
+.list-title button {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease-in-out;
+}
+
+/* При наведении на заголовок списка кнопка появляется */
+.list-title:hover button {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Иконка в заголовке (Delete, Edit и т.п.) */
+.list-title img {
+  width: 24px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* Область, где рендерятся карточки */
+.list-cards {
+  padding: 0.75rem 1rem;
+}
+
+/********************************************
+ * Стили для карточек (Card)
+ ********************************************/
+
+/* Общий контейнер карточки */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  cursor: grab;
+  transition: background-color 0.2s;
+}
+
+/* Внутреннее содержимое карточки (заголовок + кнопки) */
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Заголовок (title) внутри карточки */
+.card-title {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  padding: 0;
+}
+
+/* Кнопка редактирования карточки */
+.card-edit-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Иконка редактирования (скрываем, пока не наведёмся) */
+.card img {
+  width: 24px;
+  padding: 3px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease-in-out;
+}
+
+/* При наведении на карточку делаем иконку видимой */
+.card:hover img {
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: all;
+}
+
+/* При наведении на саму иконку можно чуть затемнить фон */
+.card:hover img:hover {
+  background-color: var(--accent-dark-010);
+}
+
+/********************************************
+ * Кнопки добавления карточки/списка
+ ********************************************/
+
+/* Кнопка "+ Add Card" внутри списка */
+.add-card-btn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0;
+}
+
+/* Кнопка "+ Add List" (добавление нового списка) */
+.add-list-btn {
+  font: inherit;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--list-bg);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  min-width: 225px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  height: 3rem;
+  margin-left: 1rem;
+  transition: background-color 0.2s;
+}
+
+/* При наведении на "+ Add List" меняем цвет */
+.add-list-btn:hover {
+  background-color: var(--list-header);
+}
+
+/* Поля ввода внутри кнопок добавления */
+.add-list-btn input,
+.add-card-btn input {
+  background: none;
+  border: 2px solid hsla(0, 0%, 75%, 0.2);
+  color: #fff;
+  font-family: inherit;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+
+/********************************************
+ * Пример дополнительных стилей для перетаскивания
+ ********************************************/
+
+/* Когда элемент в состоянии "drag" (если используешь соответствующие классы) */
+.drag {
+  opacity: 0.4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+/****************************************
+ * Пример: Подправленный List.css
+ ****************************************/
+
+ :root {
+  /* Если не объявлял ранее, объяви переменные */
+  --list-bg: #2f3136;
+  --list-header: #42454b;
+  --card-bg: #36393f;
+  --border-radius: 6px;
+  --accent-dark-010: rgba(0, 0, 0, 0.1);
+}
+
+/* Сам контейнер списка */
+.list {
+  background-color: var(--list-bg);
+  border-radius: var(--border-radius);
+  min-width: 225px;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  height: fit-content; /* подстраивается под контент */
+}
+
+/* Внутренний контейнер (если он нужен для отступов) */
+.list-content {
+  display: flex;
+  flex-direction: column;
+  /* Можешь добавить padding, если нужно */
+}
+
+/* "Шапка" списка: заголовок + кнопки */
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* заголовок слева, кнопки справа */
+  background-color: var(--list-header);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  cursor: grab;
+}
+
+/* Собственно, текст заголовка */
+.list-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+  color: #fff; /* или другой цвет */
+}
+
+/* Кнопки в "шапке" (Edit, Delete) */
+.list-header button {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.2s;
+}
+
+.list-header button:hover {
+  color: #fff;
+}
+
+/* Иконка удаления (если это <img> внутри кнопки) */
+.list-header img {
+  width: 24px;
+  cursor: pointer;
+}
+
+/* Область, где лежат карточки */
+.list-cards {
+  padding: 0.75rem 1rem;
+}
+
+/* Кнопка "+ Add Card" */
+.add-card-btn {
+  margin: 0.5rem 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.add-card-btn:hover {
+  background-color: var(--accent-dark-010);
+}
+
+/* Поле ввода, когда нажали "+ Add Card" */
+.add-card-btn input {
+  background: none;
+  border: 2px solid hsla(0, 0%, 75%, 0.2);
+  color: #fff;
+  font-family: inherit;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+
+/* Эффект при перетаскивании (если используешь .drag) */
+.drag {
+  opacity: 0.4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

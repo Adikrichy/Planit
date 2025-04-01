@@ -1,0 +1,106 @@
+.boards-page {
+  top: calc(var(--navbar-height) + 5rem);
+  position: absolute;
+  max-width: 60%;
+  min-width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.boards-page h1 {
+  margin-bottom: 1rem;
+}
+
+.boards-page p {
+  margin: 0.5rem 0;
+}
+/* BoardsPage.css */
+.board-item {
+  background: #404040 !important; /* Серый фон */
+  border: 1px solid #505050 !important; /* Граница */
+  color: #fff !important; /* Белый текст */
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+  min-width: 200px;
+  transition: all 0.2s;
+}
+
+/* Стиль для кнопки создания новой доски */
+.new-board-item {
+  background: #404040 !important;
+  border: 2px dashed #606060 !important;
+  color: #a0a0a0 !important;
+}
+
+/* Эффекты при наведении */
+.board-item:hover {
+  background: #484848 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Стили для заголовков разделов */
+.boards-page h1 {
+  color: #e0e0e0; /* Светло-серый */
+  font-size: 2rem;
+}
+
+.boards-page p {
+  color: #a0a0a0; /* Серый подзаголовок */
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+/* Обновленный стиль для пустого списка */
+.board-list.empty {
+  background-color: #1a1a1a; /* Темный фон */
+  border-radius: 8px;
+}
+
+.board-list {
+  position: relative;
+  min-height: 125px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.board-list.empty {
+  background-color: var(--bg-lighter);
+  padding: 6rem 0;
+}
+
+.board-error img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  opacity: 0.5;
+}
+
+.board-list .error {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.boards-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--text-color); /* Используем переменную для цвета */
+}
+body.light-theme .boards-title {
+  color: #000000; /* Черный цвет текста */
+}
+
+/* Темная тема: светлый текст для заголовка */
+body.dark-theme .boards-title {
+  color: #e0e0e0; /* Светлый цвет текста */
+}

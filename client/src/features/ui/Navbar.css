@@ -1,0 +1,106 @@
+nav {
+  background-color: var(--black);
+  height: var(--navbar-height);
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.25);
+}
+
+.nav-content {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between; /* Логотип слева, кнопки справа */
+  align-items: center;
+}
+
+.nav-no-auth a {
+  padding: 0.3rem 1rem;
+}
+
+.nav-no-auth .nav-content-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-no-auth .nav-content {
+  width: var(--landing-width);
+}
+
+.nav-auth .nav-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Логотип слева, кнопки справа */
+  align-items: center;
+}
+
+.nav-auth .nav-content-wrapper {
+  margin: 0 25px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between; /* Исправлено: разделение элементов */
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+/* Контейнер для кнопок */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px; /* Расстояние между кнопками */
+  margin-left: auto; /* Сдвиг кнопок к правому краю */
+}
+
+/* Кнопка переключения темы */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Кнопка настроек */
+.settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.settings-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.settings-img {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1070px) {
+  .nav-content {
+    margin: 0 2rem;
+  }
+}

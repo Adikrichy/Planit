@@ -1,0 +1,137 @@
+/* Светлая тема */
+body.light-theme {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --card-background: #f9f9f9;
+    --navbar-background: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --hover-background: rgba(0, 0, 0, 0.05);
+}
+
+/* Темная тема */
+body.dark-theme {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --card-background: #1e1e1e;
+    --navbar-background: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --hover-background: rgba(255, 255, 255, 0.1);
+}
+
+/* Общие стили */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Карточки */
+.card {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 16px;
+}
+
+.card:hover {
+    background-color: var(--hover-background);
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+body.dark-theme h1, body.dark-theme h2, body.dark-theme h3 {
+    color: var(--text-color);
+}
+
+/* Навбар */
+/* Навбар */
+.nav-auth {
+    background-color: var(--navbar-background);
+    color: var(--text-color);
+    padding: 8px 16px; /* Уменьшена высота навбара */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирование содержимого */
+  }
+  
+  /* Контейнер для содержимого навбара */
+  .nav-content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Логотип слева, кнопки справа */
+    align-items: center;
+  }
+  
+  /* Логотип */
+  .logo {
+    width: 100px;
+  }
+  
+  /* Контейнер для кнопок */
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Расстояние между кнопками */
+    margin-left: auto; /* Сдвиг кнопок к правому краю */
+  }
+  
+  /* Кнопка переключения темы */
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .theme-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Кнопка настроек */
+  .settings-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .settings-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .settings-img {
+    width: 24px;
+    height: 24px;
+  }
+
+/* Плавные переходы */
+.card {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+ 

@@ -1,0 +1,145 @@
+.register-page,
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  font-size: 0.9rem;
+  background-color: var(--black);
+  height: 50%;
+  min-height: 450px;
+  padding-top: 1rem;
+  box-shadow: -4px 4px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.box img {
+  cursor: pointer;
+  vertical-align: middle;
+}
+.box > a {
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  position: relative;
+  cursor: default;
+}
+
+.box h2 {
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+}
+
+form label {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+form input.invalid {
+  border-color: var(--red);
+}
+
+form button {
+  margin-top: 1.5rem;
+}
+
+.errors {
+  color: var(--red-light);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+
+  /* border-radius: var(--border-radius);
+  margin: 1rem 0;
+  background-color: var(--red-015);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; */
+}
+
+.box-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1.5rem 1rem;
+  position: relative;
+  background-color: #0b0b0b;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.box-footer a {
+  opacity: 0.8;
+}
+/* Светлая тема */
+body.light-theme .box {
+  background-color: #ffffff; /* Белый фон */
+  color: #000000;           /* Черный текст по умолчанию */
+  box-shadow: -4px 4px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .box h2 {
+  color: #000000; /* Заголовок */
+}
+
+body.light-theme form label {
+  color: #000000; /* Метки */
+}
+
+body.light-theme form input {
+  background-color: #ffffff; /* Белый фон инпута */
+  color: #000000;            /* Черный текст */
+  border: 1px solid #cccccc; /* Светлая рамка */
+}
+
+body.light-theme form input::placeholder {
+  color: #999999; /* Серый для плейсхолдера, чтобы отличался */
+}
+
+body.light-theme form button {
+  background-color: #007bff; /* Синий фон кнопки */
+  color: #ffffff;            /* Белый текст */
+  border: none;
+}
+
+body.light-theme .box-footer {
+  background-color: #f1f1f1; /* Светлый фон футера */
+  color: #000000;            /* Чёрный текст */
+}
+
+body.light-theme .box-footer a {
+  color: #007bff; /* Ссылки оставляем синими */
+  opacity: 1;     /* Полностью видимые */
+}
+body.light-theme .errors {
+  color: #ff0000; /* Красный цвет для ошибок */
+}
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: filter 0.3s ease;
+}
+/* Светлая тема: темный логотип */
+body.light-theme .logo {
+  filter: invert(0); /* Убираем инверсию для темного логотипа */
+}
+
+/* Темная тема: светлый логотип */
+body.dark-theme .logo {
+  filter: invert(1); /* Инвертируем цвета для светлого логотипа */
+}

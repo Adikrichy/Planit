@@ -1,0 +1,20 @@
+.settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.theme-icon {
+  background: transparent; /* Прозрачный фон */
+  border: none; /* Убрать рамку */
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+/* Убрать рамку */
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: transform 0.2s; /* Плавный переход при наведении */
+  color: yellow; /* Меняет цвет SVG */
+  
+  
+}
+
+
