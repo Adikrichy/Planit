@@ -78,3 +78,46 @@
 .account-section.about button {
   margin-top: 2rem;
 }
+/********************************************
+ * Светлая тема
+ ********************************************/
+
+/* Фон страницы аккаунта */
+body.light-theme .account-page-content {
+  background-color: #ffffff; /* Белый фон */
+  color: #000000; /* Черный текст */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  border-radius: 8px;
+}
+
+/* Детали аккаунта */
+body.light-theme .account-details .email {
+  color: rgba(0, 0, 0, 0.6); /* Темно-серый текст */
+}
+
+/* Секции аккаунта */
+body.light-theme .account-section.about {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Светлая рамка */
+}
+
+body.light-theme .account-section h3 {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Светлая рамка */
+}
+
+/* Кнопки */
+body.light-theme .account-section button {
+  background-color: #007bff; /* Синий фон */
+  color: #ffffff; /* Белый текст */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme .account-section button:hover {
+  background-color: #0056b3; /* Темно-синий фон при наведении */
+}
+
+/* Фото профиля */
+body.light-theme .profile-picture {
+  background-color: #f1f1f1; /* Светло-серый фон */
+  color: #000000; /* Черный текст */
+}

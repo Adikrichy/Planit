@@ -3,8 +3,9 @@
   position: absolute;
   max-width: 60%;
   min-width: 60%;
-  left: 50%;
+  left: calc(50% - 50px);
   transform: translateX(-50%);
+  
 }
 
 .boards-page h1 {
@@ -103,4 +104,54 @@ body.light-theme .boards-title {
 /* Темная тема: светлый текст для заголовка */
 body.dark-theme .boards-title {
   color: #e0e0e0; /* Светлый цвет текста */
+}
+/* Светлая тема: фон вокруг изображения */
+body.light-theme .board-error,
+/* Светлая тема: фон вокруг изображения */
+body.light-theme .board-error {
+  background-color: #ffffff; /* Белый фон */
+  border-radius: 8px; /* Закругленные углы */
+  padding: 2rem; /* Внутренний отступ */
+  text-align: center; /* Центрирование текста */
+  display: flex; /* Flexbox для центрирования */
+  flex-direction: column; /* Располагаем элементы вертикально */
+  justify-content: center; /* Центрирование по вертикали */
+  align-items: center; /* Центрирование по горизонтали */
+  width: 100.15%; /* Растягиваем на всю ширину родительского контейнера */
+  height: auto; /* Высота зависит от содержимого */
+  box-sizing: border-box; /* Учитываем padding в размерах */
+}
+
+/* Темная тема: фон вокруг изображения */
+body.dark-theme .board-error {
+  background-color: #1a1a1a; /* Темный фон */
+  border-radius: 8px; /* Закругленные углы */
+  padding: 2rem; /* Внутренний отступ */
+  text-align: center; /* Центрирование текста */
+  display: flex; /* Flexbox для центрирования */
+  flex-direction: column; /* Располагаем элементы вертикально */
+  justify-content: center; /* Центрирование по вертикали */
+  align-items: center; /* Центрирование по горизонтали */
+  width: 100%; /* Растягиваем на всю ширину родительского контейнера */
+  height: auto; /* Высота зависит от содержимого */
+  box-sizing: border-box; /* Учитываем padding в размерах */
+}
+
+/* Убираем смещение изображения */
+.board-error img {
+  position: static; /* Убираем абсолютное позиционирование */
+  transform: none; /* Убираем смещение */
+  max-width: 100%; /* Ограничиваем ширину изображения */
+  height: auto; /* Сохраняем пропорции изображения */
+  margin-bottom: 20px; /* Добавляем отступ между изображением и текстом */
+}
+
+/* Светлая тема: цвет текста сообщения */
+body.light-theme .board-error .error {
+  color: #000000; /* Черный цвет текста */
+}
+
+/* Темная тема: цвет текста сообщения */
+body.dark-theme .board-error .error {
+  color: #ffffff; /* Белый цвет текста */
 }

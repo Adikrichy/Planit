@@ -3,11 +3,16 @@ import '../styles/Home.css';
 import Pattern from '../assets/pattern.svg';
 import { useAuth } from '../features/auth/useAuth';
 import LandingPic from '../assets/Yess32.png';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const HomePage = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
   const auth = useAuth();
+
+  // Инициализация темы из LocalStorage
+  const [theme, setTheme] = useState<'light' | 'dark'>(
+    () => (localStorage.getItem('theme') as 'light' | 'dark') || 'light'
+  );
 
   if (auth.isAuth) return <Navigate to={'/boards'} replace />;
 
@@ -16,6 +21,18 @@ const HomePage = () => {
       featuresRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Функция для переключения темы
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Сохраняем тему в LocalStorage
+  };
+
+  // Применяем тему к body при изменении
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <div className="home-page-container">
@@ -31,6 +48,9 @@ const HomePage = () => {
               </h1>
             </div>
             <div className="header-actions">
+              <button onClick={toggleTheme} className="btn-lg">
+                Toggle Theme
+              </button>
               <Link to={'/register'} className="btn-lg">
                 Register
               </Link>

@@ -54,6 +54,7 @@
   margin-top: 1.5rem;
   display: flex;
   justify-content: center;
+  margin-right: 70px;
 }
 
 .home-page a {
@@ -168,4 +169,9 @@
   .home-header h1 {
     font-size: 1.5rem;
   }
+}
+/* Сдвиг кнопки Toggle Theme влево */
+.header-actions .btn-lg {
+  margin-left: 20px; /* Сдвигаем кнопку влево на 20px */
+  border-radius: 10px;
 }

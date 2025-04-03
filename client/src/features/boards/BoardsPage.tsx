@@ -4,18 +4,31 @@ import { Board } from './boardsSlice';
 import './BoardsPage.css';
 import BoardsList from './BoardsList';
 import NewBoardItem from './NewBoardItem';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
+import { useEffect } from 'react';
 
 const BoardsPage = () => {
-  const { data, isLoading } = useGetBoardsQuery(undefined);
+  // Получение текущего пользователя из Redux
+  const currentUser = useSelector((state: RootState) => state.auth.user);
+
+  // Запрос данных о досках
+  const { data, isLoading, refetch } = useGetBoardsQuery(undefined);
+
+  // Повторный запрос данных при смене пользователя
+  useEffect(() => {
+    if (currentUser) {
+      refetch(); // Повторно запрашиваем данные
+    }
+  }, [currentUser, refetch]);
 
   const favoritedBoards = data?.filter((board: Board) => board.favorited) || [];
-
   const allBoards = data?.filter((board: Board) => !board.favorited) || [];
 
   return (
     <div className="boards-page">
       <div className="boards-content">
-      <h1 className="boards-title">Your boards</h1>
+        <h1 className="boards-title">Your boards</h1>
         <p>Favorited</p>
         <div
           className={`board-list ${

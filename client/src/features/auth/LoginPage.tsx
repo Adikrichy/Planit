@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './auth.css';
-import Logo from '../../assets/logo.svg'; // Логотип для светлой темы
+import Logo from '../../assets/logo_dark.png'; // Логотип для светлой темы
 import LogoDark from '../../assets/logo_dark.png'; // Логотип для темной темы
 import { FormEvent, useState, useEffect } from 'react';
 import { useLoginMutation } from '../api/apiSlice';

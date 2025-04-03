@@ -1,13 +1,21 @@
-.dialog {
+/********************************************
+ * Общие стили для диалогового окна
+ ********************************************/
+ .dialog {
   position: absolute;
-  background-color: var(--bg);
+  background-color: var(--bg); /* Фон зависит от темы */
   z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2rem 3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dialog h3 {
@@ -17,13 +25,16 @@
 .dialog-desc {
   margin: 0.75rem 0;
   font-size: 0.9rem;
+  color: var(--text-color); /* Цвет текста зависит от темы */
 }
 
 .dialog-actions button {
   padding: 0.3rem 1rem;
-  background-color: var(--red);
+  background-color: var(--red); /* Цвет кнопки зависит от темы */
   border: 2px solid var(--red);
-  border-radius: 0;
+  border-radius: var(--border-radius);
+  color: #fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .dialog-actions button:first-child:hover {
@@ -41,4 +52,67 @@
 
 .dialog-actions button:nth-child(2) {
   background: none;
+  color: var(--text-color); /* Цвет текста зависит от темы */
+}
+
+/********************************************
+ * Светлая тема
+ ********************************************/
+ body.light-theme .dialog {
+  background-color: #ffffff; /* Белый фон */
+  color: #000000; /* Черный текст */
+}
+
+body.light-theme .dialog-desc {
+  color: #000000; /* Черный текст */
+}
+
+body.light-theme .dialog-actions button {
+  background-color: #ff4d4d; /* Светло-красный фон */
+  border-color: #ff4d4d;
+}
+
+body.light-theme .dialog-actions button:first-child:hover {
+  background-color: #ff1a1a; /* Темно-красный фон при наведении */
+  border-color: #ff1a1a;
+}
+
+body.light-theme .dialog-actions button:nth-child(2) {
+  color: #ffffff; /* Белый текст */
+}
+
+body.light-theme .dialog-actions button:nth-child(2):hover {
+  color: #ffffff; /* Белый текст при наведении */
+  border-color: #cccccc; /* Светлая рамка при наведении */
+}
+
+/********************************************
+ * Темная тема
+ ********************************************/
+body.dark-theme .dialog {
+  background-color: #1e1e1e; /* Темный фон */
+  color: #e0e0e0; /* Светлый текст */
+}
+
+body.dark-theme .dialog-desc {
+  color: #e0e0e0; /* Светлый текст */
+}
+
+body.dark-theme .dialog-actions button {
+  background-color: var(--red); /* Темно-красный фон */
+  border-color: var(--red);
+}
+
+body.dark-theme .dialog-actions button:first-child:hover {
+  background-color: var(--red-hover); /* Темно-красный фон при наведении */
+  border-color: var(--red-hover);
+}
+
+body.dark-theme .dialog-actions button:nth-child(2) {
+  color: #e0e0e0; /* Светлый текст */
+}
+
+body.dark-theme .dialog-actions button:nth-child(2):hover {
+  color: #ffffff; /* Белый текст при наведении */
+  border-color: #444444; /* Темная рамка при наведении */
 }
